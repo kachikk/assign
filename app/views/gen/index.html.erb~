@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Fiction_Generator</title
+</head>
+<body>
+<h2>Fiction Generator</h2>
+<p>Generating random stories for your pleasure</p>
+<p>Click below to generate!</p>
+<p><%= link_to "Generate", gen_story_path %> another story.</p>
+
+</body>
+<html>

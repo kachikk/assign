@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<html>
+    
+    <head>
+    <meta charset="utf-8">
+        <title>Random Stories</title>
+	<style>
+	body 
+	{
+	background-color:white;
+	}
+	h3
+	{
+	font-size:36pts;
+	color:blue;
+	}
+	p
+	{
+	text-allign:centre;
+	}
+	
+	</style>
+    </head>
+    
+    <body>
+        <h3>The Fiction Generator!</h3>
+        
+        <p>Your Story is: <%= @title %></p>
+        <p><%= @story_line %></p>
+        <p><%= link_to "Generate", gen_story_path%> another story!</p>
+<br>
+        <p><h6><%= link_to "Home", gen_index_path%></h6></p>
+        <p><h6>
+        <strong>Based on the <a href="http://wondermark.com/554/">Wondermark fiction generator</a> by David Malki.</strong>
+        </h6></p>
+    </body>
+    
+    </html>

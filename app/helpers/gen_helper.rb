@@ -1,0 +1,2 @@
+module GenHelper
+end

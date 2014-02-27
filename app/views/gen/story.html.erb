@@ -5,6 +5,29 @@
     <head>
     <meta charset="utf-8">
         <title>Random Stories</title>
+	<script>
+            function loadXMLDoc()
+                {
+                var xmlhttp;
+                if (window.XMLHttpRequest)
+                    {// code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp=new XMLHttpRequest();
+                    }
+                else
+                    {// code for IE6, IE5
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                xmlhttp.onreadystatechange=function()
+                    {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200)
+                        {
+                        document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+                        }
+                    }
+                xmlhttp.open("GET","#{@story_line}",true);
+                xmlhttp.send();
+                }
+        </script>
 	<style>
 	body 
 	{
@@ -17,23 +40,23 @@
 	}
 	p
 	{
-	text-allign:centre;
+	text-align:centre;
 	}
-	
-	</style>
-    </head>
+      </style>
+     </head>
     
     <body>
+    <div id="myDiv">
         <h3>The Fiction Generator!</h3>
-        
-        <p>Your Story is: <%= @title %></p>
+	<p>Your Story is: <%= @title %></p>
         <p><%= @story_line %></p>
-        <p><%= link_to "Generate", gen_story_path%> another story!</p>
-<br>
+	<p><button type="button" onclick="loadXMLDoc()">Generate </button> another story.</p>
+       <br>
         <p><h6><%= link_to "Home", gen_index_path%></h6></p>
         <p><h6>
         <strong>Based on the <a href="http://wondermark.com/554/">Wondermark fiction generator</a> by David Malki.</strong>
         </h6></p>
+	</div>
     </body>
     
     </html>
